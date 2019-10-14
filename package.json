@@ -1,11 +1,22 @@
 {
   "name": "@ryanar/react-auth-provider",
   "version": "0.3.0",
+  "repository": "https://github.com/audiolion/react-auth-provider",
+  "author": "Ryan Castner <castner.rr@gmail.com>",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/react-auth-provider.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "auth",
+    "authentication",
+    "context",
+    "provider",
+    "typescript"
   ],
   "scripts": {
     "start": "tsdx watch",
