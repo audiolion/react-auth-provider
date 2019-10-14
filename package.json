@@ -33,6 +33,7 @@
 		"@types/react": "^16.9.5",
 		"@types/react-dom": "^16.9.1",
 		"@types/testing-library__react": "^9.1.2",
+		"eslint-config-react-app": "5.0.1",
 		"husky": "^3.0.9",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",

@@ -24,13 +24,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({
     if (!previousAuthenticated && authenticated) {
       onLogin && onLogin();
     }
-  }, [previousAuthenticated, authenticated]);
+  }, [previousAuthenticated, authenticated, onLogin]);
 
   React.useEffect(() => {
     if (previousAuthenticated && !authenticated) {
       onLogout && onLogout();
     }
-  }, [previousAuthenticated, authenticated]);
+  }, [previousAuthenticated, authenticated, onLogout]);
 
   const contextValue = React.useMemo(
     () => ({
