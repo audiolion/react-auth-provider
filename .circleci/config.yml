@@ -28,6 +28,7 @@ jobs:
       - run:
           name: Test
           command: CI=true yarn test --coverage
+      - run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
   lint:
     docker:
