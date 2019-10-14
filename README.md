@@ -2,6 +2,8 @@
 
 > Easy to integrate react authentication management through context.
 
+[![codecov](https://codecov.io/gh/audiolion/react-auth-provider/branch/master/graph/badge.svg)](https://codecov.io/gh/audiolion/react-auth-provider) [![CircleCI](https://circleci.com/gh/audiolion/react-auth-provider/tree/master.svg?style=svg)](https://circleci.com/gh/audiolion/react-auth-provider/tree/master)
+
 ## Features
 
 - Dead simple to integrate
