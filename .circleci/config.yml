@@ -1,0 +1,56 @@
+version: 2.1
+
+jobs:
+  install:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Deps
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: yarn-v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+  test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Test
+          command: CI=true yarn test --coverage
+
+  lint:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Lint
+          command: yarn lint
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - install
+
+      - test:
+          requires:
+            - install
+
+      - lint:
+          requires:
+            - install

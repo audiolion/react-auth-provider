@@ -5,7 +5,10 @@ export type IAuthContext = {
   setAuthenticated: (isAuthenticated: boolean) => void;
 };
 
+/* istanbul ignore next */
+const noop = () => {};
+
 export const AuthContext = React.createContext<IAuthContext>({
   authenticated: false,
-  setAuthenticated: () => {},
+  setAuthenticated: noop,
 });
