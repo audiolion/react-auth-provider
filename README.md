@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <AuthProvider onLogin={handleLogin} onLogout={handleLogout}>
+    <AuthProvider onLogin={handleLogin} onLogout={handleLogout} defaultAuthenticated={false}>
       <Route path="/login" exact component={Login} />
       <AuthRoute path="/" exact component={Dashboard} />
     </AuthProvider>
